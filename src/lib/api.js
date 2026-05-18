@@ -1,5 +1,7 @@
 import { useStore } from '../store'
 
+const API_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '')
+
 class ApiError extends Error {
   constructor(payload, status) {
     super(payload?.message || `Error ${status}`)
@@ -13,7 +15,7 @@ async function request(method, path, body) {
   let status = 0
   let message
   try {
-    const res = await fetch(`/api${path}`, {
+    const res = await fetch(`${API_URL}${path}`, {
       method,
       headers: body ? { 'Content-Type': 'application/json' } : undefined,
       body: body ? JSON.stringify(body) : undefined,

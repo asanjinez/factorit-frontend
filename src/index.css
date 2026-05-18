@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Patrick Hand', cursive;
+  background-color: #f4ecd8;
+  color: #2b2522;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  touch-action: none;
+}
+
+#root {
+  position: relative;
+}
+
+.mesa-bg {
+  background-color: #f4ecd8;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(43, 37, 34, 0.035) 0, transparent 38%),
+    radial-gradient(circle at 80% 70%, rgba(43, 37, 34, 0.03) 0, transparent 42%),
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(43, 37, 34, 0.035) 31px 32px);
+}
+
+.ink {
+  filter: url(#inkboil);
+}
+
+.no-ink {
+  filter: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(43, 37, 34, 0.25);
+  border-radius: 4px;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grab:active {
+  cursor: grabbing;
+}
